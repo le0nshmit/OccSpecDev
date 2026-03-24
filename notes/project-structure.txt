@@ -1,0 +1,55 @@
+-- Project Structure --
+
+.
+├── app/
+│   ├── modules/
+│   │   ├── general/
+│   │   │   ├── page_routes.py
+│   │   │   ├── api_routes.py
+│   │   │   ├── service.py
+│   │   │   ├── models.py
+│   │   │   ├── schemas.py
+│   │   │   ├── utils.py
+│   │   │   └── templates/
+│   │   │       └── index.html
+│   │   ├── authentication
+│   │   └── store
+│   ├── static/
+│   │   ├── images/
+│   │   └── styles/
+│   │       ├── general/
+│   │       │   └── index.css
+│   │       ├── authentication
+│   │       ├── store
+│   │       └── components
+│   └── templates/
+│       ├── components/
+│       │   ├── header.html
+│       │   └── footer.html
+│       └── base.html
+├── instance/
+│   └── app.db
+├── notes/
+└── logs/
+
+
+
+
+
+-- Modules --
+
+
+General         →  pages that don't have specific function
+Authentication  →  pages related to account authentication
+store           →  pages related to the store
+
+
+
+
+-- Py Files --
+
+routes  →  Handle HTTP 
+service →  Business logic
+models  →  Database interact
+schemas →  Validation / sanitization
+utils   →  Reusable code
