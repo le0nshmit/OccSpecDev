@@ -1,10 +1,13 @@
-function showPass() {
-    if (document.q('pass').type == 'password') {
-        document.getElementById('pass').type = 'text';
+function showPass(element) {
+    const targetID = element.dataset.target;
+
+    if (document.getElementById(targetID).type == 'password'){
+        document.getElementById(targetID).type = 'text';
     } else {
-        document.getElementById('pass').type = 'password';
-    }
+        document.getElementById(targetID).type = 'password';
+    };
 }
+
 
 async function checkConf(pass, conf) {
     if (pass == conf) {
@@ -33,8 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (checkConf(data['pass'], data['conf'])) {
-
-
+            pass
         }
         
 
