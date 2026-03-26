@@ -1,9 +1,14 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 def create_app():
     """Initialises flask application and returns it."""
 
     app = Flask(__name__) # flask application
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///omstamce/app.db'
+    
+    
 
     '''import blueprints'''
     from .modules.general import general_bp

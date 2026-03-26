@@ -19,11 +19,6 @@
             <h1 class="title">Register</h1>
         </div>
 
-        <!-- Error Message -->
-        <div class="error-section">
-            <h2 class="error" id="register-error"></h2>
-        </div>
-
         <!-- Container Form -->
         <div class="form-section">
             <form method="post" class="form" id="register-form">
@@ -34,6 +29,7 @@
                         <h2 class="form-input-header">Email</h2>
                     </div>
                     <input class="form-input" type="email" placeholder="..." name="email" required>
+                    <h4 class="error" id="email-error"></h4>
                 </div>
 
 
@@ -43,6 +39,7 @@
                         <h2 class="form-input-header">Name</h2>
                     </div>
                     <input class="form-input" type="text" placeholder="..." name="name" required>
+                    <h4 class="error" id="name-error"></h4>
                 </div>
 
 
@@ -52,7 +49,8 @@
                         <h2 class="form-input-header">Password</h2>
                     </div>
                     <input class="form-input" id="pass" type="password" placeholder="..." name="pass" required>
-                    <input type="checkbox" name="check" onclick="showPass()">
+                    <input type="checkbox" name="check" onclick="showPass(this)" data-target="pass">
+                    <h4 class="error" id="password-error"></h4>
                 </div>
 
 
@@ -61,8 +59,10 @@
                     <div class="form-input-header-container">
                         <h2 class="form-input-header">Confirmation Password</h2>
                     </div>
-                    <input class="form-input" type="password" placeholder="..." name="conf" required>
-                    <input type="checkbox" name="check">
+                    <input class="form-input" id="conf" type="password" placeholder="..." name="conf" required>
+                    <input type="checkbox" name="check" onclick="showPass(this)" data-target="conf">
+                    <h4 class="error" id="conf-error"></h4>
+
                 </div>
 
 

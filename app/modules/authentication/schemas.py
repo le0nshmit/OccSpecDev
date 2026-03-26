@@ -1,9 +1,11 @@
 from wtforms import Form, BooleanField, StringField, PasswordField, validators
+from wtforms.validators import DataRequired, InputRequired, Regexp, Email, Length
 
-class RegistrationForm(Form):
-    email = StringField('Email', [validators.Length(min=6, max=35)])
-    name = StringField('Name', [validators.Length(min=4, max=25)])
-    password = PasswordField('New Password', [
-        validators.DataRequired(),
-        validators.EqualTo('confirm', message='Passwords must match')
-    ])
+
+class ValidationForm(Form):
+    email = StringField('email', validators=[InputRequired(), Email()])
+    name = StringField('name', validators=[InputRequired(), Length(min=3, max=25)])
+    password = PasswordField('pass', validators=[InputRequired(), Length(min=8, message='Password must be 8 characters!'), Regexp(r'(?=.*[a-z])(?=.*[A-Z])(?=.*\d)', message="Password must contain at least one lowercase letter, one uppercase letter, and one digit")])
+    
+    phone = StringField('phone')
+
