@@ -1,0 +1,86 @@
+<!-- Inherit from base html with components -->
+{% extends 'base.html' %}
+
+<title>{% block title %}Store{% endblock %}</title>
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='styles/store/store.css')}}">
+
+<nav id="nav-bar">
+    <ul id="list">
+        <li class="list-item"><a class="item category" href="">Plants & Seeds</a></li>
+        <li class="list-item"><a class="item category" href="">Fertilizers & Soil</a></li>
+        <li class="list-item"><a class="item category" href="">Crop Protection</a></li>
+        <li class="list-item"><a class="item category" href="">Equipment & Tools</a></li>
+        <li class="list-item"><a class="item category" href="">Irrigation</a></li>
+        
+        <li class="list-item"><a class="item" id="view" href="">View More →</a></li>
+        <li class="list-item"><div id="cart-button"><img id="cart-logo" src="{{url_for('static', filename='images/icons/trolley-light.png')}}" alt="cart"><h3 id="cart-price">£14.50</h3></div></li> 
+    </ul>
+</nav>
+<section class="store-category-section">
+    <!-- Category -->
+    <div class="store-category">
+        <div class="headers-section">
+            <div class="category-title-section"><h2 class="category-title">Fruits & Vegatables</h2><h3 class="category-more">View More →</div>
+        </div>
+        <div class="items-section">
+            <ul class="category-list">
+                <div class="item-container">
+                    <div class="item-card"></div>
+                    <div class="item-description">Fresh organic apples</div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Category -->
+    <div class="store-category">
+        <div class="headers-section">
+            <div class="category-title-section"><h2 class="category-title">Fruits & Vegatables</h2><h3 class="category-more">View More →</div>
+        </div>
+        <div class="items-section">
+            <ul class="category-list">
+                <div class="item-container">
+                    <div class="item-card"></div>
+                    <div class="item-description">Fresh organic apples</div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Category -->
+    <div class="store-category">
+        <div class="headers-section">
+            <div class="category-title-section"><h2 class="category-title">Fruits & Vegatables</h2><h3 class="category-more">View More →</div>
+        </div>
+        <div class="items-section">
+            <ul class="category-list">
+                <div class="item-container">
+                    <div class="item-card"></div>
+                    <div class="item-description">Fresh organic apples</div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Category -->
+    <div class="store-category">
+        <div class="headers-section">
+            <div class="category-title-section"><h2 class="category-title">Fruits & Vegatables</h2><h3 class="category-more">View More →</div>
+        </div>
+        <div class="items-section">
+            <ul class="category-list">
+                <div class="item-container">
+                    <div class="item-card"></div>
+                    <div class="item-description">Fresh organic apples</div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+
+
+</section>
+
+{% endblock %}

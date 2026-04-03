@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    height: 2000px;
+}
+
+#header{
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    position: sticky;
+    top: 0;
+
+    background-color: #84F8A6;
+}
+
+.header-section{
+    width: 100%;
+    height: 100%;
+
+    outline: black solid;
+}

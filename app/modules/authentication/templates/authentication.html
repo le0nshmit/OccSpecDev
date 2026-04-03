@@ -1,0 +1,150 @@
+<!-- Inherit from base html with components -->
+{% extends 'base.html' %}
+
+<title>{% block title %}Authentication{% endblock %}</title>
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/authentication/authentication.css')}}">
+<script src="{{url_for('static', filename='js/authentication.js')}}"></script>
+
+<!-- Authentication Wrapper -->
+<div id="auth-wrapper">
+
+    <!-- Form Container (Register) -->
+    <section class="form-container">
+
+        <!-- Container Title -->
+        <div class="title-section">
+            <h1 class="title">Register</h1>
+        </div>
+
+        <!-- Container Form -->
+        <div class="form-section">
+            <form method="post" class="form" id="register-form">
+
+                <!-- Form Input (Email) -->
+                <div class="form-input-container">
+                    <div class="form-input-header-container">
+                        <h2 class="form-input-header">Email</h2>
+                    </div>
+                    <input class="form-input" type="email" placeholder="..." name="email" required>
+                    <h4 class="error" id="email-error"></h4>
+                </div>
+
+
+                <!-- Form Input (Name) -->
+                <div class="form-input-container">
+                    <div class="form-input-header-container">
+                        <h2 class="form-input-header">Name</h2>
+                    </div>
+                    <input class="form-input" type="text" placeholder="..." name="name" required>
+                    <h4 class="error" id="name-error"></h4>
+                </div>
+
+
+                <!-- Form Input (Pass) -->
+                <div class="form-input-container">
+                    <div class="form-input-header-container">
+                        <h2 class="form-input-header">Password</h2>
+                    </div>
+                    <input class="form-input" id="register-pass" type="password" placeholder="..." name="pass" required>
+                    <input type="checkbox" name="check" onclick="showPass(this)" data-target="register-pass">
+                    <h4 class="error" id="password-error"></h4>
+                </div>
+
+
+                <!-- Form Input (Confirmation-Pass) -->
+                <div class="form-input-container">
+                    <div class="form-input-header-container">
+                        <h2 class="form-input-header">Confirmation Password</h2>
+                    </div>
+                    <input class="form-input" id="conf" type="password" placeholder="..." name="conf" required>
+                    <input type="checkbox" name="check" onclick="showPass(this)" data-target="conf">
+                    <h4 class="error" id="conf-error"></h4>
+                </div>
+
+
+                <!-- Form Input (Phone) -->
+                <div class="form-input-container">
+                    <div class="form-input-header-container">
+                        <h2 class="form-input-header">Phone</h2>
+                    </div>
+                    <input class="form-input" type="input" placeholder="..." name="phone">
+                </div>
+
+
+                <!-- Form Input (Account-Type) -->
+                <div class="form-input-container">
+                    <div class="form-input-header-container">
+                        <h3 class="form-input-header">Producer</h3>
+                        <input type="radio" name="acc-type" value="producer" required>
+                    </div>
+
+                    <div class="form-input-header-container">
+                        <h3 class="form-input-header">Consumer</h3>
+                        <input type="radio" name="acc-type" value="consumer" required>
+                    </div>
+                </div>
+
+
+                <!-- Form Input (Submit) -->
+                <div class="form-input-container">
+                    <input type="submit" value="SUBMIT" name="submit">
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+
+
+    <!-- Form Container (Login) -->
+    <section class="form-container">
+
+        <!-- Container Title -->
+        <div class="title-section">
+            <h1 class="title">Login</h1>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-section">
+            <h4 id="error"></h2>
+        </div>
+
+        <!-- Container Form -->
+        <div class="form-section">
+            <form action="/store" method="post" class="form" id="login-form">
+
+                <!-- Form Input (Email) -->
+                <div class="form-input-container">
+                    <div class="form-input-header-container">
+                        <h2 class="form-input-header">Email</h2>
+                    </div>
+                    <input class="form-input" type="email" placeholder="..." name="email" required>
+                </div>
+
+
+                <!-- Form Input (Pass) -->
+                <div class="form-input-container">
+                    <div class="form-input-header-container">
+                        <h2 class="form-input-header">Password</h2>
+                    </div>
+                    <input class="form-input" id="login-pass" type="password" placeholder="..." name="pass" required>
+                    <input type="checkbox" name="check" onclick="showPass(this)" data-target="login-pass">
+                </div>
+
+                
+                <!-- Form Input (Submit) -->
+                <div class="form-input-container">
+                    <input type="submit" value="SUBMIT" name="submit">
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+
+
+{% endblock %}

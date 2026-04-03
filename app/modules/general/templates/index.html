@@ -1,0 +1,17 @@
+<!-- Inherit from base html with components -->
+{% extends 'base.html' %}
+
+
+<title>{% block title %}Home{% endblock %}</title>
+
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/general/index.css') }}">
+
+<section id="hero-section">
+    
+</section>
+ 
+{% endblock %}

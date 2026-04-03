@@ -1,0 +1,156 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#nav-bar{
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 5%;
+
+    position: sticky;
+    top: 10%;
+
+    background-color: #39674D;
+}
+
+#list{
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
+.list-item{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    color: #E8F0EA;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.item:hover{
+    filter: brightness(.9);
+}
+
+.category{
+    font-weight: bold;
+}
+
+#view{
+    text-decoration: underline;
+}
+
+#cart-button{
+    width: 45%;
+    height: 65%;
+
+    outline: #E8F0EA solid 1px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#cart-button:hover{
+    transform: scale(1.05);
+}
+
+#cart-price{
+    color: #E8F0EA;
+    font-weight: 100;
+    font-family: sans-serif;
+
+    margin: auto;
+}
+
+#cart-logo{
+    margin-left: 5%;
+    height: 80%;
+}
+
+.store-category-section{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.store-category{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+
+    margin-top: 3%;
+    outline: black solid;
+}
+
+.headers-section{
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+
+    outline: black solid;
+}
+
+.category-title-section{
+    display: flex;
+    flex: 1;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.category-title{
+    flex: 1;
+}
+
+.category-more{
+    flex: 1;
+    text-align: end;
+}
+
+.items-section{
+    width: 100%;
+    flex: 1;
+
+    outline: black solid;
+}
+
+.category-list{
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.item-container{
+    width: 15%;
+    height: 100%;
+
+    outline: blue solid;
+}
+
