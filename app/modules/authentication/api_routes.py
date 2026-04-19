@@ -2,15 +2,17 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask import jsonify, request, session, redirect
 from werkzeug.datastructures import MultiDict
 from .schemas import ValidationForm
-from .models import Users
+from ...models import Users
 from app import db
 import sqlalchemy
+import requests
 
 
-def register_api_bp(api_bp):
+
+def register_auth_api(auth_api):
     """Creates api routes"""
 
-    @api_bp.route('/validate-input', methods=['POST'])
+    @auth_api.route('/validate-input', methods=['POST'])
     def validate():
         '''Validation Endpoint'''
 
@@ -20,23 +22,25 @@ def register_api_bp(api_bp):
         # input data into validation form
         form = ValidationForm(MultiDict(data))
 
+
         # if form is valid
         if form.validate():
 
             # hash password and store user in database
-            user = Users(name=form.name.data, email=form.email.data, password=generate_password_hash(form.password.data), phone=form.phone.data, type=form.type.data)
+            user = Users(name=form.name.data, email=form.email.data, password=generate_password_hash(form.password.data), phone=form.phone.data, type=form.type.data, address_line=None, postcode=None)
             db.session.add(user)
             try:
                 db.session.commit()
             except Exception as e:
                 db.session.rollback()
+                print(e)
                 return jsonify({"success": False, "errors": {"email": ["Email already exists!"]}}), 400
             return jsonify({"success": True, "message": "Validation Passed"}), 200
         else:
             return jsonify({"success": False, "errors": form.errors}), 400
             
 
-    @api_bp.route('/login', methods=['POST', 'GET'])
+    @auth_api.route('/login', methods=['POST', 'GET'])
     def login():
         '''Login Endpoint'''
 
@@ -51,7 +55,6 @@ def register_api_bp(api_bp):
             session['user_id'] = user.id
             session['user_type'] = user.type
 
-            print(user.type)
 
             
             if user.type == 'producer':
@@ -62,10 +65,3 @@ def register_api_bp(api_bp):
         else:
             return jsonify({'success': False, 'message': 'Password is not correct!'}), 401
 
-
-    @api_bp.route('/logout', methods=['POST', 'GET'])
-    def logout():
-        '''Logout Endpoint'''
-
-        session.clear()
-        return redirect('/auth/authentication')

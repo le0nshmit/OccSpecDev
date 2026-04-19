@@ -1,34 +1,3 @@
-body{
-    margin: 0;
-    padding: 0;
-}
-
-#nav-bar{
-    margin: 0;
-    padding: 0;
-
-    width: 100%;
-    height: 5%;
-
-    position: sticky;
-    top: 10%;
-
-    background-color: #39674D;
-}
-
-#list{
-    margin: 0;
-    padding: 0;
-
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style-type: none;
-}
-
 .list-item{
     width: 100%;
     height: 100%;
@@ -100,7 +69,6 @@ body{
     flex: 1;
 
     margin-top: 3%;
-    outline: black solid;
 }
 
 .headers-section{
@@ -108,8 +76,6 @@ body{
     height: 10%;
 
     display: flex;
-
-    outline: black solid;
 }
 
 .category-title-section{
@@ -132,8 +98,6 @@ body{
 .items-section{
     width: 100%;
     flex: 1;
-
-    outline: black solid;
 }
 
 .category-list{
@@ -144,13 +108,53 @@ body{
     margin: 0;
 
     display: flex;
-    justify-content: space-evenly;
+    overflow-x: scroll;
+}
+
+.category-list::-webkit-scrollbar{
+    display: none;
+}
+
+.category-group{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    gap: 4em;
+
+    justify-content: start;
+    align-items: center;
+    animation: spin 10s infinite linear;
+}
+
+.category-more{
+    text-decoration: none;
 }
 
 .item-container{
-    width: 15%;
-    height: 100%;
+    width: 20%;
+    height: 95%;
 
-    outline: blue solid;
+    flex: 0 0 15em;
 }
 
+.item-container:hover{
+    filter: brightness(70%);
+}
+
+.item-card{
+    width: 100%;
+    height: 90%;
+
+
+
+    background-image: url(../../images/other/apples-crate.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {translate: -100%;}
+}

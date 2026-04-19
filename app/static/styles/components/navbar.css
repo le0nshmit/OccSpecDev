@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#nav-bar{
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 5%;
+
+    position: sticky;
+    top: 10%;
+
+    background-color: #39674D;
+}
+
+#list{
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}

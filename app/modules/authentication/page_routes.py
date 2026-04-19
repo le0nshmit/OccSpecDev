@@ -10,3 +10,11 @@ def register_auth_bp(auth_bp):
             return redirect('/store')
 
         return render_template('authentication.html') 
+    
+
+    @auth_bp.route('/logout', methods=['POST', 'GET'])
+    def logout():
+        '''Logout Endpoint'''
+
+        session.clear()
+        return redirect('/auth/authentication')

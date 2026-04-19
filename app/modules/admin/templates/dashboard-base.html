@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+<title>{% block title %}Dashboard{% endblock %}</title>
+
+{% block content %}
+<script type="module" src="{{url_for('static', filename='js/dashboard.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='styles/admin/dashboard-base.css')}}">
+
+<div id="main-container">
+
+    {% include 'components/navbar.html' %}
+
+    <!-- Dashboard Container -->
+    <div id="dashboard-container">
+
+        <!-- Sidebar Container -->
+        <aside id="sidebar-container">
+
+            <!-- Sidebar List -->
+            <ul id="sidebar-list">
+                
+            </ul>
+        </aside>
+
+        <!-- Dashboard Content Container -->
+        <section id="contents-container">
+
+            {% block dashboard_content %}
+
+            
+            
+            {% endblock %}
+            
+        </section>
+    </div>
+</div>
+
+{% endblock %}

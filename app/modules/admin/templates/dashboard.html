@@ -1,8 +1,518 @@
-<title>{% block title %}Dashboard{% endblock %}</title>
+{% extends 'dashboard-base.html' %}
+
+{% block dashboard_content %}
+<link rel="stylesheet" href="{{url_for('static', filename='styles/admin/dashboard.css')}}">
 
 
-{% block content %}
+<!-- Quick Information Container -->
+<div id="quick-info-container" class="contents-children">
 
-dashboard
+    <!-- Info Container -->
+    <div class="info-container">
+        <div class="info-top-container">
+            <div class="info-icon-section">
+                <img class="info-icon" src="{{url_for('static', filename='images/icons/dashboard/info/orders-info-light.png')}}" alt="icon">        
+            </div>
+            <div class="info-header-section">
+                <h3 class="info-header">Ongoing Orders</h3>
+            </div>
+        </div>
+        <div class="info-bottom-container">
+            <div class="info-value-container">
+                <h2 class="info-value">16</h2>
+            </div>
+            <div class="info-small-icon-section">
+                <img class="info-small-icon" src="{{url_for('static', filename='images/icons/dashboard/info/arrow-green-icon.png')}}" alt="arrow">
+                <h4 class="info-small-text">+3</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Container -->
+    <div class="info-container">
+        <div class="info-top-container">
+            <div class="info-icon-section">
+                <img class="info-icon" src="{{url_for('static', filename='images/icons/dashboard/info/orders-info-light.png')}}" alt="icon">        
+            </div>
+            <div class="info-header-section">
+                <h3 class="info-header">Ongoing Orders</h3>
+            </div>
+        </div>
+        <div class="info-bottom-container">
+            <div class="info-value-container">
+                <h2 class="info-value">16</h2>
+            </div>
+            <div class="info-small-icon-section">
+                <img class="info-small-icon" src="{{url_for('static', filename='images/icons/dashboard/info/arrow-green-icon.png')}}" alt="arrow">
+                <h4 class="info-small-text">+3</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Container -->
+    <div class="info-container">
+        <div class="info-top-container">
+            <div class="info-icon-section">
+                <img class="info-icon" src="{{url_for('static', filename='images/icons/dashboard/info/orders-info-light.png')}}" alt="icon">        
+            </div>
+            <div class="info-header-section">
+                <h3 class="info-header">Ongoing Orders</h3>
+            </div>
+        </div>
+        <div class="info-bottom-container">
+            <div class="info-value-container">
+                <h2 class="info-value">16</h2>
+            </div>
+            <div class="info-small-icon-section">
+                <img class="info-small-icon" src="{{url_for('static', filename='images/icons/dashboard/info/arrow-green-icon.png')}}" alt="arrow">
+                <h4 class="info-small-text">+3</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Container -->
+    <div class="info-container">
+        <div class="info-top-container">
+            <div class="info-icon-section">
+                <img class="info-icon" src="{{url_for('static', filename='images/icons/dashboard/info/orders-info-light.png')}}" alt="icon">        
+            </div>
+            <div class="info-header-section">
+                <h3 class="info-header">Ongoing Orders</h3>
+            </div>
+        </div>
+        <div class="info-bottom-container">
+            <div class="info-value-container">
+                <h2 class="info-value">16</h2>
+            </div>
+            <div class="info-small-icon-section">
+                <img class="info-small-icon" src="{{url_for('static', filename='images/icons/dashboard/info/arrow-green-icon.png')}}" alt="arrow">
+                <h4 class="info-small-text">+3</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Quick Access Container-->
+<div id="quick-access-container">
+
+    <!-- Access Container 1 -->
+    <div id="access-container-1" class="access-container">
+
+        <!-- Produce Section -->
+        <section id="produce-access-section" class="access-section">
+
+            <!-- Produce Section Header Container-->
+            <div class="header-container">
+
+                <!-- Produce Section Header Title -->
+                <div class="title-container">
+                    <h3 class="title">Manage Produce</h3>
+                </div>
+
+                <!-- Produce Section Header Buttons -->
+                <div class="header-actions-container">
+                    <button class="actions-button" id="produce-add-button">+ Add Produce</button>
+                    <button class="actions-button" id="produce-compare-button">⇄ Compare Produce</button>
+                </div>
+            </div>
+
+
+            <!-- Produce Section Contents Container-->
+            <div class="table-container">
+
+                <!-- Produce Table -->
+                <div id="produce-table" class="table">
+
+                    <!-- Produce Table Header -->
+                    <div class="table-row-header-footer table-header-row">
+                        <div class="table-header">Image</div>
+                        <div class="table-header">Name</div>
+                        <div class="table-header">Price</div>
+                        <div class="table-header">Stock</div>
+                        <div class="table-header">Edit</div>
+                    </div>
+
+                    <!-- Produce Table Row -->
+                    <div class="table-row">
+                        <div class="produce-table-row-image-container">
+                            <div class="produce-table-row-image"></div>
+                            <div class="produce-table-row-image-full">
+                                <div class="produce-table-row-image-full-exit">X</div>
+                            </div>
+                        </div>
+
+                        <div class="table-row-data table-row-name"
+                        >Green Apples
+                        </div>
+
+                        <div class="table-row-data produce-table-row-price">
+                            £5.50
+                        </div>
+
+                        <div class="table-row-data produce-table-row-stock">
+                            150
+                        </div>
+
+                        <div class="produce-table-row-modify">
+                            <div class="actions-button produce-table-row-modify-edit produce-table-row-modify-image"></div>
+                            <div class="actions-button produce-table-row-modify-delete produce-table-row-modify-image"></div>
+                        </div>
+                    </div>
+
+
+                    <!-- Produce Table Row -->
+                    <div class="table-row">
+                        <div class="produce-table-row-image-container">
+                            <div class="produce-table-row-image"></div>
+                            <div class="produce-table-row-image-full">
+                                <div class="produce-table-row-image-full-exit">X</div>
+                            </div>
+                        </div>
+
+                        <div class="table-row-data table-row-name"
+                        >Green Apples
+                        </div>
+
+                        <div class="table-row-data produce-table-row-price">
+                            £5.50
+                        </div>
+
+                        <div class="table-row-data produce-table-row-stock">
+                            150
+                        </div>
+
+                        <div class="produce-table-row-modify">
+                            <div class="actions-button produce-table-row-modify-edit produce-table-row-modify-image"></div>
+                            <div class="actions-button produce-table-row-modify-delete produce-table-row-modify-image"></div>
+                        </div>
+                    </div>
+
+
+                    <!-- Produce Table Row -->
+                    <div class="table-row">
+                        <div class="produce-table-row-image-container">
+                            <div class="produce-table-row-image"></div>
+                            <div class="produce-table-row-image-full">
+                                <div class="produce-table-row-image-full-exit">X</div>
+                            </div>
+                        </div>
+
+                        <div class="table-row-data table-row-name"
+                        >Green Apples
+                        </div>
+
+                        <div class="table-row-data produce-table-row-price">
+                            £5.50
+                        </div>
+
+                        <div class="table-row-data produce-table-row-stock">
+                            150
+                        </div>
+
+                        <div class="produce-table-row-modify">
+                            <div class="actions-button produce-table-row-modify-edit produce-table-row-modify-image"></div>
+                            <div class="actions-button produce-table-row-modify-delete produce-table-row-modify-image"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Produce Table Row -->
+                    <div class="table-row">
+                        <div class="produce-table-row-image-container">
+                            <div class="produce-table-row-image"></div>
+                            <div class="produce-table-row-image-full">
+                                <div class="produce-table-row-image-full-exit">X</div>
+                            </div>
+                        </div>
+
+                        <div class="table-row-data table-row-name"
+                        >Green Apples
+                        </div>
+
+                        <div class="table-row-data produce-table-row-price">
+                            £5.50
+                        </div>
+
+                        <div class="table-row-data produce-table-row-stock">
+                            150
+                        </div>
+
+                        <div class="produce-table-row-modify">
+                            <div class="actions-button produce-table-row-modify-edit produce-table-row-modify-image"></div>
+                            <div class="actions-button produce-table-row-modify-delete produce-table-row-modify-image"></div>
+                        </div>
+                    </div>
+
+
+                    
+
+
+                    <!-- Produce Table Footer -->
+                    <div class="table-row-header-footer table-footer-row">
+                        <div class="produce-table-footer-content footer-content-item">showing 3 / 3</div>
+                        <div class="produce-table-footer-content"></div>
+                        <div class="produce-table-footer-content" id="footer-content-page">
+                            <div class="produce-table-footer-content-page-button"><--</div>
+                            <div class="footer-content-item">1 / 1</div>
+                            <div class="produce-table-footer-content-page-button">--></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- Orders Section -->
+        <section id="orders-access-section" class="access-section">
+            <!-- Orders Section Header Container-->
+            <div class="header-container">
+
+                <!-- Orders Section Header Title -->
+                <div class="title-container">
+                    <h3 class="title">Recent Orders</h3>
+                </div>
+            </div>
+
+            <!-- Orders Section Contents Container-->
+            <div class="table-container">
+
+                <!-- Orders Table -->
+                <div id="orders-table" class="table">
+
+                    <!-- Orders Table Header -->
+                    <div class="table-row-header-footer table-header-row">
+                        <div class="table-header">Order ID</div>
+                        <div class="table-header">Customer</div>
+                        <div class="table-header">Status</div>
+                        <div class="table-header">Date</div>
+                        <div class="table-header">Total</div>
+                    </div>
+
+
+                    <!-- Orders Table Row -->
+                    <div class="table-row">
+                        <div class="table-row-data order-table-row-id">
+                            #001
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-customer">
+                            Kaydee Seatherton
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-status">
+                            <div class="orders-row-data-status orders-row-data-status-pending">
+                                Pending
+                            </div>
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-date">
+                            17/04/2026
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-total">
+                            £15.25
+                        </div>
+                    </div>
+
+                    <!-- Orders Table Row -->
+                    <div class="table-row">
+                        <div class="table-row-data order-table-row-id">
+                            #002
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-customer">
+                            Bog Bog
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-status">
+                            <div class="orders-row-data-status orders-row-data-status-pending">
+                                Pending
+                            </div>
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-date">
+                            14/04/2026
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-total">
+                            £26.70
+                        </div>
+                    </div>
+
+
+
+                    <!-- Orders Table Row -->
+                    <div class="table-row">
+                        <div class="table-row-data order-table-row-id">
+                            #003
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-customer">
+                            Deacon Mutter
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-status">
+                            <div class="orders-row-data-status orders-row-data-status-completed">
+                                Completed
+                            </div>
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-date">
+                            12/04/2026
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-total">
+                            £8.50
+                        </div>
+                    </div>
+
+
+
+                    <!-- Orders Table Row -->
+                    <div class="table-row">
+                        <div class="table-row-data order-table-row-id">
+                            #004
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-customer">
+                            Ronnie Pickering
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-status">
+                            <div class="orders-row-data-status orders-row-data-status-cancelled">
+                                Cancelled
+                            </div>
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-date">
+                            10/04/2026
+                        </div>
+
+
+                        <div class="table-row-data order-table-row-total">
+                            £9.00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Access Container 2 -->
+    <div id="access-container-2" class="access-container">
+
+        <!-- Analytics Section -->
+        <section id="analytics-access-section" class="access-section">
+
+            <!-- Analytics Section Header Container -->
+            <div class="header-container">
+                
+                <!-- Analytics Section Header Title -->
+                    <div class="title-container">
+                    <h3 class="title">View Analytics</h3>
+                    </div>
+
+                <!-- Produce Section Header Buttons -->
+                <div class="header-actions-container">
+                    <button class="actions-button" id="analytics-view-buton">🔍 View More</button>
+                </div>
+            </div>
+
+            <!-- Analytics Statistics Container-->
+            <div id="analytics-statistics-container">
+                <div id="analytics-statistics-carousel-wrapper">
+                    <button class="analytics-carousel-button analytics-carousel-button-left">◀</button>
+
+                    <div id="analytics-statistics-carousel-track">
+                        <div class="analytics-statistics-carousel-item-wrapper">
+                            <div class="analytics-statistics-carousel-item">1</div>
+                        </div>
+                        <div class="analytics-statistics-carousel-item-wrapper">
+                            <div class="analytics-statistics-carousel-item">2</div>
+                        </div>
+                        <div class="analytics-statistics-carousel-item-wrapper">
+                            <div class="analytics-statistics-carousel-item">3</div>
+                        </div>
+                    </div>
+
+                    <button class="analytics-carousel-button analytics-carousel-button-right">▶</button>
+                </div>
+            </div> 
+        </section>
+        
+
+        <!-- Quick Section -->
+        <section id="actions-access-section" class="access-section">
+
+            <!-- Analytics Section Header Container -->
+            <div class="header-container">
+                
+                <!-- Analytics Section Header Title -->
+                    <div class="title-container">
+                    <h3 class="title">Quick Actions</h3>
+                    </div>
+            </div>
+
+            <div id="actions-access-container">
+                <div id="actions-access-grid-container">
+                    <div class="actions-access-grid-column">
+                        <div class="actions-access-grid-column-header-container">
+                            <img class="actions-access-grid-column-header-image" src="{{url_for('static', filename='images/icons/dashboard/sidebar/produce-light.png')}}" alt="">
+                            <h1 class="actions-access-grid-column-header">Produce</h1>
+                        </div>
+                        <div class="actions-access-grid-column-button-container">
+                            <div class="actions-access-grid-column-button">add</div>
+                            <div class="actions-access-grid-column-button">remove</div>
+                            <div class="actions-access-grid-column-button">stock</div>
+                        </div>
+                    </div>
+
+                    <div class="actions-access-grid-column">
+                        <div class="actions-access-grid-column-header-container">
+                            <img class="actions-access-grid-column-header-image" src="{{url_for('static', filename='images/icons/dashboard/sidebar/orders-light.png')}}" alt="">
+                            <h1 class="actions-access-grid-column-header">Orders</h1>
+                        </div>
+                        <div class="actions-access-grid-column-button-container">
+                            <div class="actions-access-grid-column-button">new order</div>
+                            <div class="actions-access-grid-column-button">todays orders</div>
+                            <div class="actions-access-grid-column-button">pending orders</div>
+                        </div>
+                    </div>
+
+                    <div class="actions-access-grid-column">
+                        <div class="actions-access-grid-column-header-container">
+                            <img class="actions-access-grid-column-header-image" src="{{url_for('static', filename='images/icons/dashboard/sidebar/analytics-light.png')}}" alt="">
+                            <h1 class="actions-access-grid-column-header">Analytics</h1>
+                        </div>
+                        <div class="actions-access-grid-column-button-container">
+                            <div class="actions-access-grid-column-button">daily report</div>
+                            <div class="actions-access-grid-column-button">low stock</div>
+                            <div class="actions-access-grid-column-button">export data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
 
 {% endblock %}

@@ -4,20 +4,11 @@
 <title>{% block title %}Store{% endblock %}</title>
 
 {% block content %}
+{% include 'components/navbar.html' %}
+<script type="module" src="{{url_for('static', filename='js/store.js')}}"></script>
 <link rel="stylesheet" href="{{url_for('static', filename='styles/store/store.css')}}">
 
-<nav id="nav-bar">
-    <ul id="list">
-        <li class="list-item"><a class="item category" href="">Plants & Seeds</a></li>
-        <li class="list-item"><a class="item category" href="">Fertilizers & Soil</a></li>
-        <li class="list-item"><a class="item category" href="">Crop Protection</a></li>
-        <li class="list-item"><a class="item category" href="">Equipment & Tools</a></li>
-        <li class="list-item"><a class="item category" href="">Irrigation</a></li>
-        
-        <li class="list-item"><a class="item" id="view" href="">View More →</a></li>
-        <li class="list-item"><div id="cart-button"><img id="cart-logo" src="{{url_for('static', filename='images/icons/trolley-light.png')}}" alt="cart"><h3 id="cart-price">£14.50</h3></div></li> 
-    </ul>
-</nav>
+
 <section class="store-category-section">
     <!-- Category -->
     <div class="store-category">
@@ -26,9 +17,11 @@
         </div>
         <div class="items-section">
             <ul class="category-list">
-                <div class="item-container">
-                    <div class="item-card"></div>
-                    <div class="item-description">Fresh organic apples</div>
+                <div class="category-group">
+                    <div class="item-container">
+                        <div class="item-card"></div>
+                        <div class="item-description">Fresh organic apples</div>
+                    </div>
                 </div>
             </ul>
         </div>

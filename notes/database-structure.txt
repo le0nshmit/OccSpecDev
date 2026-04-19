@@ -1,0 +1,48 @@
+app.db
+
+    -- Shared --
+
+    users:
+        - id
+        - email
+        - name
+        - password hash
+        - phone
+        - type
+        - created at
+    
+    orders:
+        - id
+        - consmer id
+        - producer id
+        - status
+        - total price
+        - created at
+
+    ordered items:
+        - id
+        - order id
+        - product id
+        - quantity
+        - price
+
+
+    -- Producer Specific --
+
+    producers:
+        - id
+        - user id
+        - business name
+        - location
+        - verification status
+
+    products:
+        - id
+        - producer id
+        - name
+        - description
+        - price
+        - stock
+        - category
+
+    

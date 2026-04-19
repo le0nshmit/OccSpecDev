@@ -30,16 +30,21 @@ def create_app():
 
     '''import blueprints'''
     from .modules.general import general_bp
-    from .modules.authentication import auth_bp, api_bp
-    from .modules.store import store_bp
-    from .modules.admin import admin_bp
+    from .modules.authentication import auth_bp, auth_api
+    from .modules.store import store_bp, store_api
+    from .modules.admin import admin_bp, admin_api
 
     '''register blueprints with flask application'''
     app.register_blueprint(general_bp)
-    app.register_blueprint(store_bp)
+
+    app.register_blueprint(store_bp, url_prefix='/store')
+    app.register_blueprint(store_api, url_prefix='/api/store')
+
     app.register_blueprint(auth_bp, url_prefix='/auth')
-    app.register_blueprint(api_bp, url_prefix='/api/auth')
+    app.register_blueprint(auth_api, url_prefix='/api/auth')
+
     app.register_blueprint(admin_bp, url_prefix='/admin')
+    app.register_blueprint(admin_api, url_prefix='/api/admin')
     
     with app.app_context():
         db.create_all()

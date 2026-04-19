@@ -1,0 +1,58 @@
+
+// snippet
+
+{<nav id="nav-bar">
+    <ul id="list">
+        <li class="list-item"><a class="item" id="view" href="">View More →</a></li>
+        <li class="list-item"><div id="cart-button"><img id="cart-logo" src="{{url_for('static', filename='images/icons/trolley-light.png')}}" alt="cart"><h3 id="cart-price">£14.50</h3></div></li> 
+    </ul>
+</nav>}
+
+
+
+
+-- WEEK PLAN --
+
+
+REQUIREMENTS:
+
+    - Finished assett log
+    - Finished test log
+    - Finished development log
+
+    - Provide information about producers, their methods and benefits of buying locally
+    - Allow customers to:
+        - view products with transparent pricing and availability
+        - place orders for collection or delivery
+        - manage their accounts and view order history
+    - provide dashboard (manage stock, update product info, view orders)
+
+20/04/2026 Day 1
+
+- Databases:
+
+    - move models.py into app/
+    - redesign tables (users, orders, ordered_items, producers, products)
+
+- Admin Module:
+
+    - Dashboard:
+
+        - dashboard-template
+
+        - dashboard (QUICK INFO(orders, ..., ..., ...), QUICK ACCESS(produce, orders, analytics, actions))
+
+    
+            - Produce Container:
+
+                - 
+
+            - Orders Container:
+
+            - Analytics Container:
+
+            - Actions Container:
+
+                
+
+        
